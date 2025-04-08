@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beli Domain - Ganner Store</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <h1>Ganner Store</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="/">Beranda</a></li>
+        <li><a href="domain">Beli Domain</a></li>
+        <li><a href="produk">Produk Lain</a></li>
+        <li><a href="bantuan">Bantuan</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="domain-search">
+    <h2>Cari Domain Anda</h2>
+    <form id="domainForm">
+      <input type="text" id="domainInput" placeholder="Masukkan nama domain" required>
+      <button type="submit">Cek Ketersediaan</button>
+    </form>
+    <p id="domainResult"></p>
+    <div id="domainDetails" style="display: none;">
+      <h3>Detail Domain</h3>
+      <p>Domain: <span id="domainName"></span></p>
+      <p>Harga: Rp <span id="domainPrice"></span></p>
+      <label>
+        <input type="checkbox" id="sslGratis"> SSL Gratis
+      </label>
+      <label>
+        <input type="checkbox" id="sslBerbayar"> SSL Berbayar (Rp 28.000)
+      </label>
+      <button id="tambahDomain">Tambahkan ke Keranjang</button>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Ganner Store. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

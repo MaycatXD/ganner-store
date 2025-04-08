@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verifikasi Data - Ganner Store</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <h1>Ganner Store</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="/">Beranda</a></li>
+        <li><a href="domain">Beli Domain</a></li>
+        <li><a href="produk">Produk Lain</a></li>
+        <li><a href="bantuan">Bantuan</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="verifikasi">
+    <h2>Verifikasi Data</h2>
+    <form id="verifikasiForm">
+      <label for="nama">Nama Lengkap:</label>
+      <input type="text" id="nama" required>
+
+      <label for="whatsapp">Nomor WhatsApp:</label>
+      <input type="text" id="whatsapp" required>
+
+      <label for="kupon">Kode Kupon (opsional):</label>
+      <input type="text" id="kupon">
+
+      <label for="pembayaran">Metode Pembayaran:</label>
+      <select id="pembayaran" required>
+        <option value="QRIS">QRIS</option>
+        <option value="DANA">DANA</option>
+      </select>
+
+      <h3>Detail Pembelian</h3>
+      <p>Produk: <span id="verifikasiProduk"></span></p>
+      <p>Harga: Rp <span id="verifikasiHarga"></span></p>
+      <p>PPN 11%: Rp <span id="verifikasiPpn"></span></p>
+      <p>Total: Rp <span id="verifikasiTotal"></span></p>
+
+      <button type="submit">Kirim via WhatsApp</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Ganner Store. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

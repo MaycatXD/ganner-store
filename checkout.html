@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout - GANNER STORE</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link href="/css/checkout.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="https://edu.gannerstudio.rf.gd/assets/ganner-store.png" alt="Ganner Store">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Beranda</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Produk
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="/produk">Semua Produk</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="/produk#website">Jasa Website</a></li>
+              <li><a class="dropdown-item" href="/produk#sosmed">Suntik Sosmed</a></li>
+              <li><a class="dropdown-item" href="/produk#nokos">NOKOS OTP</a></li>
+              <li><a class="dropdown-item" href="/produk#panel">Panel Pterodactyl</a></li>
+              <li><a class="dropdown-item" href="/produk#domain">Domain</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about-us">Tentang Kami</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Kontak</a>
+          </li>
+        </ul>
+        <a href="https://wa.me/6285950018968" class="btn btn-primary ms-lg-3">
+          <i class="fab fa-whatsapp me-2"></i> Hubungi Kami
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Checkout Header -->
+  <section class="py-5 bg-primary text-white">
+    <div class="container text-center">
+      <h1 class="display-5 fw-bold mb-3">Checkout Produk</h1>
+      <p class="lead">Lengkapi data pemesanan Anda</p>
+    </div>
+  </section>
+
+  <!-- Checkout Form -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="order-form">
+            <div class="text-center mb-4">
+              <h2 id="productTitle"><i class="fas fa-shopping-cart me-2"></i> Memuat Produk...</h2>
+              <p id="productDescription" class="text-muted">Sedang memuat deskripsi produk</p>
+              <p id="productPrice" class="h4">Harga: <span class="total-price">Rp 0</span></p>
+            </div>
+            
+            <form id="checkoutForm">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label for="customerName" class="form-label">Nama Lengkap</label>
+                  <input type="text" class="form-control" id="customerName" placeholder="Masukkan nama lengkap" required>
+                </div>
+                
+                <div class="col-md-6">
+                  <label for="customerEmail" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="customerEmail" placeholder="Masukkan email" required>
+                </div>
+                
+                <div class="col-md-6">
+                  <label for="customerPhone" class="form-label">Nomor WhatsApp</label>
+                  <input type="tel" class="form-control" id="customerPhone" placeholder="Masukkan nomor WhatsApp" required>
+                </div>
+                
+                <div class="col-md-6">
+                  <label for="paymentMethod" class="form-label">Metode Pembayaran</label>
+                  <select class="form-select" id="paymentMethod" required>
+                    <option value="">Pilih metode pembayaran</option>
+                    <option value="QRIS">QRIS</option>
+                    <option value="GoPay">GoPay</option>
+                    </select>
+                </div>
+                
+                <div id="productSpecificFields">
+                  <!-- Dynamic fields will be inserted here based on product -->
+                </div>
+                
+                <div class="col-12">
+                  <label for="customerNotes" class="form-label">Catatan Tambahan</label>
+                  <textarea class="form-control" id="customerNotes" rows="3" placeholder="Kebutuhan khusus, dll."></textarea>
+                </div>
+                
+                <div class="col-12 text-center mt-4">
+                  <button type="submit" class="btn btn-primary btn-lg">
+                    <i class="fab fa-whatsapp me-2"></i> Pesan via WhatsApp
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <img src="https://edu.gannerstudio.rf.gd/assets/ganner-store.png" alt="Ganner Store" width="180" class="mb-3">
+          <p>Solusi digital terbaik untuk kebutuhan bisnis online Anda dengan pelayanan profesional dan harga terjangkau.</p>
+          <div class="mt-3">
+            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-telegram"></i></a>
+          </div>
+        </div>
+        
+        <div class="col-lg-2 col-md-4">
+          <h5>Produk</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="produk.html#website">Jasa Website</a></li>
+            <li class="mb-2"><a href="produk.html#sosmed">Suntik Sosmed</a></li>
+            <li class="mb-2"><a href="produk.html#nokos">NOKOS OTP</a></li>
+            <li class="mb-2"><a href="produk.html#panel">Panel Pterodactyl</a></li>
+            <li class="mb-2"><a href="produk.html#domain">Domain</a></li>
+          </ul>
+        </div>
+        
+        <div class="col-lg-2 col-md-4">
+          <h5>Perusahaan</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="#">Tentang Kami</a></li>
+            <li class="mb-2"><a href="#">Blog</a></li>
+            <li class="mb-2"><a href="#">Karir</a></li>
+            <li class="mb-2"><a href="#">Partner</a></li>
+            <li class="mb-2"><a href="#">Kebijakan Privasi</a></li>
+          </ul>
+        </div>
+        
+        <div class="col-lg-4 col-md-4">
+          <h5>Hubungi Kami</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><i class="fas fa-phone-alt me-2"></i> 0859-5001-8968</li>
+            <li class="mb-2"><i class="fas fa-envelope me-2"></i> ckid.network@gmail.com</li>
+            <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> Bekasi, Jawa Barat, Indonesia</li>
+            <li class="mb-2"><i class="fas fa-clock me-2"></i> Buka 24/7</li>
+          </ul>
+        </div>
+      </div>
+      
+      <hr class="my-4" style="border-color: rgba(255,255,255,0.1);">
+      
+      <div class="text-center">
+        <p class="mb-0">&copy; 2025 GANNER STORE. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Custom JS -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Get product from URL parameter
+      const urlParams = new URLSearchParams(window.location.search);
+      const productSlug = urlParams.get('p');
+      
+      // Product database
+      const products = {
+        // Website products
+        'website-komunitas': {
+          title: 'Website Komunitas',
+          description: 'Website khusus untuk komunitas dengan fitur dasar.',
+          price: 'Rp 10.000',
+          fields: [
+            {
+              type: 'text',
+              id: 'communityName',
+              label: 'Nama Komunitas',
+              required: true,
+              placeholder: 'Masukkan nama komunitas Anda'
+            },
+            {
+              type: 'textarea',
+              id: 'communityDescription',
+              label: 'Deskripsi Komunitas',
+              required: false,
+              placeholder: 'Deskripsi singkat tentang komunitas Anda'
+            }
+          ]
+        },
+        'website-biolink': {
+          title: 'Website Biolink Custom',
+          description: 'Biolink profesional untuk semua link sosial media Anda.',
+          price: 'Rp 12.000',
+          fields: [
+            {
+              type: 'text',
+              id: 'biolinkTitle',
+              label: 'Judul Biolink',
+              required: true,
+              placeholder: 'Contoh: Linktree Saya'
+            },
+            {
+              type: 'text',
+              id: 'biolinkUsername',
+              label: 'Username Subdomain',
+              required: true,
+              placeholder: 'Your Name'
+            }
+          ]
+        },
+        'website-store': {
+          title: 'Website Store',
+          description: 'Toko online sederhana untuk memulai bisnis digital Anda.',
+          price: 'Rp 10.000',
+          fields: [
+            {
+              type: 'text',
+              id: 'storeName',
+              label: 'Nama Toko',
+              required: true,
+              placeholder: 'Masukkan nama toko Anda'
+            },
+            {
+              type: 'number',
+              id: 'productCount',
+              label: 'Perkiraan Jumlah Produk',
+              required: true,
+              placeholder: '10'
+            }
+          ]
+        },
+        
+        // Suntik Sosmed products
+        'suntik-tiktok': {
+          title: 'Suntik Tiktok',
+          description: 'Tingkatkan followers, likes, views, dan engagement Tiktok Anda.',
+          price: 'Mulai Rp 15.000',
+          fields: [
+            {
+              type: 'text',
+              id: 'tiktokUsername',
+              label: 'Username Tiktok',
+              required: true,
+              placeholder: '@username'
+            },
+            {
+              type: 'select',
+              id: 'serviceType',
+              label: 'Jenis Layanan',
+              required: true,
+              options: [
+                {value: 'followers', text: 'Followers'},
+                {value: 'likes', text: 'Likes'},
+                {value: 'views', text: 'Views'},
+                {value: 'comments', text: 'Komentar'}
+              ]
+            },
+            {
+              type: 'number',
+              id: 'quantity',
+              label: 'Jumlah',
+              required: true,
+              placeholder: '1000'
+            }
+          ]
+        },
+        'suntik-instagram': {
+          title: 'Suntik Instagram',
+          description: 'Tingkatkan followers, likes, dan engagement Instagram Anda.',
+          price: 'Mulai Rp 15.000',
+          fields: [
+            {
+              type: 'text',
+              id: 'instagramUsername',
+              label: 'Username Instagram',
+              required: true,
+              placeholder: '@username'
+            },
+            {
+              type: 'select',
+              id: 'serviceType',
+              label: 'Jenis Layanan',
+              required: true,
+              options: [
+                {value: 'followers', text: 'Followers'},
+                {value: 'likes', text: 'Likes'},
+                {value: 'comments', text: 'Komentar'}
+              ]
+            },
+            {
+              type: 'number',
+              id: 'quantity',
+              label: 'Jumlah',
+              required: true,
+              placeholder: '1000'
+            }
+          ]
+        },
+        'suntik-youtube': {
+          title: 'Suntik YouTube',
+          description: 'Tingkatkan subscribers, likes, views, dan engagement YouTube Anda.',
+          price: 'Mulai Rp 15.000',
+          fields: [
+            {
+              type: 'text',
+              id: 'youtubeUrl',
+              label: 'URL Channel/Video',
+              required: true,
+              placeholder: 'https://youtube.com/...'
+            },
+            {
+              type: 'select',
+              id: 'serviceType',
+              label: 'Jenis Layanan',
+              required: true,
+              options: [
+                {value: 'subscribers', text: 'Subscribers'},
+                {value: 'likes', text: 'Likes'},
+                {value: 'views', text: 'Views'}
+              ]
+            },
+            {
+              type: 'number',
+              id: 'quantity',
+              label: 'Jumlah',
+              required: true,
+              placeholder: '1000'
+            }
+          ]
+        },
+        
+        // NOKOS products
+        'nokos-whatsapp': {
+          title: 'NOKOS WhatsApp',
+          description: 'Nomor kosong untuk verifikasi OTP WhatsApp.',
+          price: 'Mulai Rp 5.500/nomor',
+          fields: [
+            {
+              type: 'number',
+              id: 'numberCount',
+              label: 'Jumlah Nomor',
+              required: true,
+              placeholder: '1'
+            },
+            {
+              type: 'select',
+              id: 'provider',
+              label: 'Provider',
+              required: true,
+              options: [
+                {value: 'telkomsel', text: 'Telkomsel'},
+                {value: 'xl', text: 'XL'},
+                {value: 'indosat', text: 'Indosat'},
+                {value: '3', text: 'Tri'}
+              ]
+            }
+          ]
+        },
+        'nokos-telegram': {
+          title: 'NOKOS Telegram',
+          description: 'Nomor kosong untuk verifikasi OTP Telegram.',
+          price: 'Mulai Rp 5.500/nomor',
+          fields: [
+            {
+              type: 'number',
+              id: 'numberCount',
+              label: 'Jumlah Nomor',
+              required: true,
+              placeholder: '1'
+            },
+            {
+              type: 'select',
+              id: 'provider',
+              label: 'Provider',
+              required: true,
+              options: [
+                {value: 'telkomsel', text: 'Telkomsel'},
+                {value: 'xl', text: 'XL'},
+                {value: 'indosat', text: 'Indosat'},
+                {value: '3', text: 'Tri'}
+              ]
+            }
+          ]
+        },
+        
+        // Panel products
+        'panel-minecraft': {
+          title: 'Server Minecraft',
+          description: 'Panel server Minecraft dengan Pterodactyl.',
+          price: 'Rp 3.000 - 15.000',
+          fields: [
+            {
+              type: 'select',
+              id: 'packageType',
+              label: 'Paket',
+              required: true,
+              options: [
+                {value: 'basic', text: 'Basic - Rp 3.000/hari'},
+                {value: 'standard', text: 'Standard - Rp 7.000/hari'},
+                {value: 'premium', text: 'Premium - Rp 15.000/hari'}
+              ]
+            },
+            {
+              type: 'number',
+              id: 'duration',
+              label: 'Durasi (hari)',
+              required: true,
+              placeholder: '30'
+            }
+          ]
+        },
+        
+        // Domain products
+        'domain-myid': {
+          title: 'Domain .my.id',
+          description: 'Domain personal Indonesia dengan ekstensi .my.id.',
+          price: 'Rp 25.000/tahun',
+          fields: [
+            {
+              type: 'text',
+              id: 'domainName',
+              label: 'Nama Domain',
+              required: true,
+              placeholder: 'namadomain'
+            },
+            {
+              type: 'number',
+              id: 'duration',
+              label: 'Durasi (tahun)',
+              required: true,
+              placeholder: '1'
+            }
+          ]
+        },
+        'domain-bizid': {
+          title: 'Domain .biz.id',
+          description: 'Domain bisnis Indonesia dengan ekstensi .biz.id.',
+          price: 'Rp 15.000/tahun',
+          fields: [
+            {
+              type: 'text',
+              id: 'domainName',
+              label: 'Nama Domain',
+              required: true,
+              placeholder: 'namadomain'
+            },
+            {
+              type: 'number',
+              id: 'duration',
+              label: 'Durasi (tahun)',
+              required: true,
+              placeholder: '1'
+            }
+          ]
+        }
+      };
+      
+      // Set product info if found
+      if (productSlug && products[productSlug]) {
+        const product = products[productSlug];
+        document.getElementById('productTitle').innerHTML = `<i class="fas fa-shopping-cart me-2"></i> ${product.title}`;
+        document.getElementById('productDescription').textContent = product.description;
+        document.getElementById('productPrice').innerHTML = `Harga: <span class="total-price">${product.price}</span>`;
+        
+        // Add dynamic fields
+        const fieldsContainer = document.getElementById('productSpecificFields');
+        product.fields.forEach(field => {
+          const fieldGroup = document.createElement('div');
+          fieldGroup.className = 'col-12';
+          
+          const label = document.createElement('label');
+          label.className = 'form-label';
+          label.textContent = field.label;
+          label.htmlFor = field.id;
+          
+          let input;
+          if (field.type === 'select') {
+            input = document.createElement('select');
+            input.className = 'form-select';
+            input.id = field.id;
+            input.required = field.required || false;
+            
+            // Add options
+            field.options.forEach(option => {
+              const optionElement = document.createElement('option');
+              optionElement.value = option.value;
+              optionElement.textContent = option.text;
+              input.appendChild(optionElement);
+            });
+          } else if (field.type === 'textarea') {
+            input = document.createElement('textarea');
+            input.className = 'form-control';
+            input.id = field.id;
+            input.placeholder = field.placeholder || '';
+            input.required = field.required || false;
+            input.rows = 3;
+          } else {
+            input = document.createElement('input');
+            input.type = field.type;
+            input.className = 'form-control';
+            input.id = field.id;
+            input.placeholder = field.placeholder || '';
+            input.required = field.required || false;
+          }
+          
+          fieldGroup.appendChild(label);
+          fieldGroup.appendChild(input);
+          fieldsContainer.appendChild(fieldGroup);
+        });
+      } else {
+        document.getElementById('productTitle').textContent = 'Produk Tidak Ditemukan';
+        document.getElementById('productDescription').textContent = 'Produk yang Anda cari tidak tersedia.';
+        document.getElementById('productPrice').innerHTML = 'Harga: <span class="total-price">-</span>';
+      }
+      
+      // Form submission
+      const checkoutForm = document.getElementById('checkoutForm');
+      checkoutForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const productTitle = document.getElementById('productTitle').textContent.replace('Memuat Produk...', '').trim();
+        const productPrice = document.querySelector('.total-price').textContent;
+        
+        // Collect form data
+        const formData = {
+          product: productTitle,
+          price: productPrice,
+          name: document.getElementById('customerName').value,
+          email: document.getElementById('customerEmail').value,
+          phone: document.getElementById('customerPhone').value,
+          payment: document.getElementById('paymentMethod').value,
+          notes: document.getElementById('customerNotes').value,
+          details: {}
+        };
+        
+        // Collect dynamic fields
+        const dynamicFields = document.querySelectorAll('#productSpecificFields input, #productSpecificFields select, #productSpecificFields textarea');
+        dynamicFields.forEach(field => {
+          formData.details[field.id] = field.value;
+        });
+        
+        // Format WhatsApp message
+        let message = `*PEMESANAN PRODUK*\n\n`
+          + `🛒 *Produk:* ${formData.product}\n`
+          + `💰 *Harga:* ${formData.price}\n\n`
+          + `👤 *Data Pemesan:*\n`
+          + `   ▸ 📛 Nama: ${formData.name}\n`
+          + `   ▸ 📧 Email: ${formData.email}\n`
+          + `   ▸ 📱 WhatsApp: ${formData.phone}\n`
+          + `   ▸ 💳 Metode Pembayaran: ${formData.payment}\n\n`
+          + `⚙️ *Detail Produk:*\n`;
+        
+        // Add dynamic fields to message
+        for (const [key, value] of Object.entries(formData.details)) {
+          const label = document.querySelector(`label[for="${key}"]`)?.textContent || key;
+          message += `   ▸ ${label}: ${value}\n`;
+        }
+        
+        // Add notes if exists
+        if (formData.notes) {
+          message += `\n📝 *Catatan Tambahan:*\n${formData.notes}\n`;
+        }
+        
+        message += `\n✅ Saya ingin memesan produk ini. Mohon konfirmasi ketersediaan dan total pembayaran.\n\n`
+          + `Terima kasih! 🙏`;
+        
+        // Encode message for WhatsApp URL
+        const encodedMessage = encodeURIComponent(message);
+        window.location.href = `https://wa.me/6285950018968?text=${encodedMessage}`;
+      });
+    });
+  </script>
+</body>
+</html>

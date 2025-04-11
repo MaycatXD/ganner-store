@@ -1,0 +1,25 @@
+# Aktifkan mod_rewrite
+RewriteEngine On
+
+# Set base directory (jika file .htaccess berada di root)
+RewriteBase /
+
+# 1. Hilangkan ekstensi .html dari URL
+# Contoh: example.com/file.html -> example.com/file
+# Contoh: example.com/folder/file.html -> example.com/folder/file
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.*)$ $1.html [L]
+
+# 2. Redirect URL dengan .html ke URL tanpa .html
+# Contoh: example.com/file.html -> example.com/file
+# Contoh: example.com/folder/file.html -> example.com/folder/file
+RewriteCond %{THE_REQUEST} \s/([^.]+)\.html [NC]
+RewriteRule ^ /%1 [R=301,L]
+
+# 3. Aturan untuk file index.html
+# Jika ada permintaan ke folder, arahkan ke index.html
+DirectoryIndex index.html
+
+# 4. Handle 404 Error (Halaman Tidak Ditemukan)
+ErrorDocument 404 /404.html
